@@ -1,0 +1,18 @@
+.form-control{
+    background-color: lemonchiffon;
+
+}
+
+#registerImage{
+    float: right;
+    width: 200px;
+    height: 177px;
+    margin-right: 200px;
+}
+
+.page-header{
+    background-color: greenyellow;
+}
+body{
+    background-color: greenyellow;
+}
