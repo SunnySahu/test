@@ -4,34 +4,40 @@
   <small> Complete the form below and start posting new research projects! </small>
 </div>
 <div class="col-md-6">
-<form >
+<form (ngSubmit)="onSubmit(f)" #f="ngForm">
 
    <div class="form-group">
     <label for="exampleInputName2">Name</label>
-    <input type="text" class="form-control" id="exampleInputName2" placeholder="Name of organization">
+    <input type="text" [(ngModel)]="data.name" name="name" class="form-control" id="exampleInputName2" placeholder="Name of organization">
   </div>
 
   <div class="form-group">
     <label for="exampleInputEmail1">Email address</label>
-    <input type="email" #e class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder=" Enter email For Contact">
+    <input type="email" [(ngModel)]="data.email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder=" Enter email For Contact">
     <small id="emailHelp" class="form-text text-muted">Email is required</small>
   </div>
   <div class="form-group">
     <label for="exampleInputPassword1">Password</label>
-    <input type="password" #p class="form-control" id="exampleInputPassword1" placeholder="Create a Password">
+    <input type="password" [(ngModel)]="data.password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Create a Password">
   </div>
   
   <div class="form-group">
     <label for="exampleTextarea">Description For New Project</label>
-    <textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
+    <textarea class="form-control" [(ngModel)]="data.description" name="description" id="exampleTextarea" rows="3"></textarea>
   </div>
  
   
-  <button type="submit" (click)="onSignup(e.value, p.value)" style="background-color: red" class="btn btn-primary">Submit</button>
+  <button type="submit"  style="background-color: red" class="btn btn-primary">Submit</button>
 </form>
 </div>
 <br>
 <br>
 <img id="registerImage" src="http://cdn2.sportngin.com/attachments/photo/5412/6787/register-button-300x266_large.png" />
+
+
+
+
+
+
 
 
