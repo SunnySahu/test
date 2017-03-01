@@ -8,8 +8,8 @@ import {Project} from '../project';
 export class ProjectListComponent implements OnInit {
 
 projects:Project[]=[
-new Project('sample','sample', 'http://www.jqueryscript.net/images/Simplest-Responsive-jQuery-Image-Lightbox-Plugin-simple-lightbox.jpg'),
-new Project('Sample2','Sample2', 'http://ideasuccessnetwork.com/wp-content/uploads/2013/07/hand-drawing-on-paper-new-idea_fkrV_5rd.jpg')
+new Project('sample project','sample project1', 'http://www.jqueryscript.net/images/Simplest-Responsive-jQuery-Image-Lightbox-Plugin-simple-lightbox.jpg'),
+new Project('project2','project2', 'http://ideasuccessnetwork.com/wp-content/uploads/2013/07/hand-drawing-on-paper-new-idea_fkrV_5rd.jpg')
 ];
 @Output() projectSelected= new EventEmitter<Project>();
 

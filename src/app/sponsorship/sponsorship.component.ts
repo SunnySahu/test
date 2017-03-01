@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {HttpService} from "../http.service";
 import{NgForm} from '@angular/forms';
+import {Response} from "@angular/http";
 @Component({
   selector: 'app-sponsorship',
   templateUrl: './sponsorship.component.html',
@@ -8,7 +9,7 @@ import{NgForm} from '@angular/forms';
   providers:[HttpService]
 })
 
-export class SponsorshipComponent  {
+export class SponsorshipComponent implements OnInit  {
  
     data={
   name:'',
@@ -23,18 +24,20 @@ export class SponsorshipComponent  {
 
 constructor(private httpService: HttpService){}
 
+ngOnInit(){
+  this.httpService.getData()
+  .subscribe(
+    (data: Response)=> console.log(data)
+  );
+}
 
-  onsignup(email:string,password:string){
-
-this.httpService.sendData({email: email, password:password})
-.subscribe(
-  data=> console.log(data)
-);
-  }
 
   onSubmit(form: NgForm)
   {
     console.log(form);
     console.log(this.data);
+    this.httpService.sendData({name:form})
+.subscribe(data=> console.log(data));
+   
   }
 }
